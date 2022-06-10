@@ -47,7 +47,7 @@ export const Feed = ({ title, text, date, imageUrl }) => {
     };
 
     return (
-        <Container maxWidth="sm">
+        // <Container maxWidth="sm">
             <Card >
                 <CardHeader
                     avatar={
@@ -77,6 +77,6 @@ export const Feed = ({ title, text, date, imageUrl }) => {
                     </IconButton>
                 </CardActions>
             </Card>
-        </Container>
+        // </Container>
     );
 }
