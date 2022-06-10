@@ -13,7 +13,6 @@ import { User as UserIcon } from '../icons/user';
 import { UserAdd as UserAddIcon } from '../icons/user-add';
 import { Users as UsersIcon } from '../icons/users';
 import { XCircle as XCircleIcon } from '../icons/x-circle';
-import { Logo } from './logo';
 import { NavItem } from './nav-item';
 
 const items = [
@@ -25,38 +24,38 @@ const items = [
   {
     href: '/customers',
     icon: (<UsersIcon fontSize="small" />),
-    title: 'Customers'
+    title: 'Connect'
   },
   {
     href: '/products',
     icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Products'
+    title: 'products'
   },
-  {
-    href: '/account',
-    icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
-  },
-  {
-    href: '/settings',
-    icon: (<CogIcon fontSize="small" />),
-    title: 'Settings'
-  },
-  {
-    href: '/login',
-    icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: (<XCircleIcon fontSize="small" />),
-    title: 'Error'
-  }
+  // {
+  //   href: '/account',
+  //   icon: (<UserIcon fontSize="small" />),
+  //   title: 'Market Place'
+  // },
+  // {
+  //   href: '/settings',
+  //   icon: (<CogIcon fontSize="small" />),
+  //   title: 'Settings'
+  // },
+  // {
+  //   href: '/login',
+  //   icon: (<LockIcon fontSize="small" />),
+  //   title: 'Login'
+  // },
+  // {
+  //   href: '/register',
+  //   icon: (<UserAddIcon fontSize="small" />),
+  //   title: 'Register'
+  // },
+  // {
+  //   href: '/404',
+  //   icon: (<XCircleIcon fontSize="small" />),
+  //   title: 'Error'
+  // }
 ];
 
 export const DashboardSidebar = (props) => {
@@ -97,16 +96,21 @@ export const DashboardSidebar = (props) => {
               passHref
             >
               <a>
-                <Logo
+                {/* <Logo
                   sx={{
                     height: 42,
                     width: 42
                   }}
+                /> */}
+                <img
+                  alt="Go to pro"
+                  src="/static/images/ConnectTechs.png"
+                  width={250}
                 />
               </a>
             </NextLink>
           </Box>
-          <Box sx={{ px: 2 }}>
+          {/* <Box sx={{ px: 2 }}>
             <Box
               sx={{
                 alignItems: 'center',
@@ -118,8 +122,8 @@ export const DashboardSidebar = (props) => {
                 py: '11px',
                 borderRadius: 1
               }}
-            >
-              <div>
+            > */}
+          {/* <div>
                 <Typography
                   color="inherit"
                   variant="subtitle1"
@@ -134,8 +138,8 @@ export const DashboardSidebar = (props) => {
                   {' '}
                   : Premium
                 </Typography>
-              </div>
-              <SelectorIcon
+              </div> */}
+          {/* <SelectorIcon
                 sx={{
                   color: 'neutral.500',
                   width: 14,
@@ -143,7 +147,7 @@ export const DashboardSidebar = (props) => {
                 }}
               />
             </Box>
-          </Box>
+          </Box> */}
         </div>
         <Divider
           sx={{
@@ -162,25 +166,25 @@ export const DashboardSidebar = (props) => {
           ))}
         </Box>
         <Divider sx={{ borderColor: '#2D3748' }} />
-        <Box
+        {/* <Box
           sx={{
             px: 2,
             py: 3
           }}
-        >
-          <Typography
+        > */}
+          {/* <Typography
             color="neutral.100"
             variant="subtitle2"
           >
             Need more features?
-          </Typography>
-          <Typography
+          </Typography> */}
+          {/* <Typography
             color="neutral.500"
             variant="body2"
           >
             Check out our Pro solution template.
-          </Typography>
-          <Box
+          </Typography> */}
+          {/* <Box
             sx={{
               display: 'flex',
               mt: 2,
@@ -195,8 +199,8 @@ export const DashboardSidebar = (props) => {
               alt="Go to pro"
               src="/static/images/sidebar_pro.png"
             />
-          </Box>
-          <NextLink
+          </Box> */}
+          {/* <NextLink
             href="https://material-kit-pro-react.devias.io/"
             passHref
           >
@@ -210,8 +214,9 @@ export const DashboardSidebar = (props) => {
             >
               Pro Live Preview
             </Button>
-          </NextLink>
-        </Box>
+          </NextLink> */}
+
+        {/* </Box> */}
       </Box>
     </>
   );

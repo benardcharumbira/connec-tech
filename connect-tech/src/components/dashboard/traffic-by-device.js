@@ -65,7 +65,7 @@ export const TrafficByDevice = (props) => {
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+      {/* <CardHeader title="Traffic by Device" />
       <Divider />
       <CardContent>
         <Box
@@ -116,7 +116,7 @@ export const TrafficByDevice = (props) => {
             </Box>
           ))}
         </Box>
-      </CardContent>
+      </CardContent> */}
     </Card>
   );
 };

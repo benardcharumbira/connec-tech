@@ -14,92 +14,65 @@ import {
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Feed } from './../feed'
+import { Container } from '@mui/system';
 
-const products = [
+
+const users = [
   {
     id: uuid(),
     name: 'Dropbox',
-    imageUrl: '/static/images/products/product_1.png',
-    updatedAt: subHours(Date.now(), 2)
+    imageUrl: 'B',
+    updatedAt: subHours(Date.now(), 2).toISOString(),
+    text: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like.'
+
   },
   {
     id: uuid(),
     name: 'Medium Corporation',
-    imageUrl: '/static/images/products/product_2.png',
-    updatedAt: subHours(Date.now(), 2)
+    imageUrl: 'R',
+    updatedAt: subHours(Date.now(), 2).toISOString(),
+    text: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like.'
   },
   {
     id: uuid(),
     name: 'Slack',
-    imageUrl: '/static/images/products/product_3.png',
-    updatedAt: subHours(Date.now(), 3)
+    imageUrl: 'M',
+    updatedAt: subHours(Date.now(), 3).toISOString(),
+    text: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like.'
+
   },
   {
     id: uuid(),
     name: 'Lyft',
-    imageUrl: '/static/images/products/product_4.png',
-    updatedAt: subHours(Date.now(), 5)
+    imageUrl: 'P',
+    updatedAt: subHours(Date.now(), 5).toISOString(),
+    text: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like.'
+
   },
   {
     id: uuid(),
     name: 'GitHub',
-    imageUrl: '/static/images/products/product_5.png',
-    updatedAt: subHours(Date.now(), 9)
+    imageUrl: 'G',
+    updatedAt: subHours(Date.now(), 9).toISOString(),
+    text: 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels,if you like.'
+
   }
 ];
 
 export const LatestProducts = (props) => (
-  <Card {...props}>
-    <CardHeader
-      subtitle={`${products.length} in total`}
-      title="Latest Products"
-    />
+  <Container {...props}>
     <Divider />
     <List>
-      {products.map((product, i) => (
+      {users.map((user, i) => (
         <ListItem
-          divider={i < products.length - 1}
-          key={product.id}
+          divider={i < user.length - 1}
+          key={user.id}
         >
-          <ListItemAvatar>
-            <img
-              alt={product.name}
-              src={product.imageUrl}
-              style={{
-                height: 48,
-                width: 48
-              }}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            primary={product.name}
-            secondary={`Updated ${formatDistanceToNow(product.updatedAt)}`}
-          />
-          <IconButton
-            edge="end"
-            size="small"
-          >
-            <MoreVertIcon />
-          </IconButton>
+          <Feed title={user.name} date={user.updatedAt} text={user.text} imageUrl={user.imageUrl} />
         </ListItem>
       ))}
     </List>
     <Divider />
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        p: 2
-      }}
-    >
-      <Button
-        color="primary"
-        endIcon={<ArrowRightIcon />}
-        size="small"
-        variant="text"
-      >
-        View all
-      </Button>
-    </Box>
-  </Card>
+  </Container>
 );
