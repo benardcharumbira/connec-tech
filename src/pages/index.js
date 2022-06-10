@@ -81,14 +81,15 @@ const Dashboard = () => (
             xl={3}
             xs={12}
           >
-            <TrafficByDevice sx={{ height: '100%' }} />
+            {/* <TrafficByDevice sx={{ height: '100%' }} /> */}
           </Grid>
           <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justifyContent="center"
+            style={{ minHeight: '100vh' }}
           >
             <LatestProducts sx={{ height: '100%' }} />
           </Grid>
@@ -99,7 +100,7 @@ const Dashboard = () => (
             xl={9}
             xs={12}
           >
-            <LatestOrders />
+            {/* <LatestOrders /> */}
           </Grid>
         </Grid>
       </Container>
