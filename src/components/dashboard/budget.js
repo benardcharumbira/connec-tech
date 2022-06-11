@@ -25,7 +25,7 @@ export const Budget = (props) => (
             color="textPrimary"
             variant="h4"
           >
-            24k
+            150
           </Typography>
         </Grid>
         <Grid item>
