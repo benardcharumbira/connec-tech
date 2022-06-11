@@ -2,7 +2,7 @@
 import { useState, React } from 'react';
 import PropTypes from 'prop-types';
 
-import { Avatar, Box, Card, CardContent, Divider, Grid, Typography, Modal } from '@mui/material';
+import { Avatar, Box, Card, CardContent, Divider, Grid, Typography,Button, Modal } from '@mui/material';
 import { Clock as ClockIcon } from '../../icons/clock';
 import { Download as DownloadIcon } from '../../icons/download';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -27,36 +27,9 @@ const style = {
 
 export const ProductCard = ({ product, ...rest }) => {
 
-  const [open, setOpen] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleOpen = () => {
-    setShowModal(true);
-  };
-  const handleClose = () => {
-    setShowModal(false);
-  };
-
   return (
     <>
-
-      {
-        showModal ? <Modal
-          open={handleOpen}
-          onClose={handleClose}
-          aria-labelledby="parent-modal-title"
-          aria-describedby="parent-modal-description"
-        >
-          <Box sx={{ ...style, width: 400 }}>
-            <h2 id="parent-modal-title">Text in a modal</h2>
-            <p id="parent-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-          </Box>
-        </Modal> : null
-      }
       <Card
-        onClick={() => setShowModal(true)}
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -85,9 +58,9 @@ export const ProductCard = ({ product, ...rest }) => {
             align="center"
             color="textPrimary"
             gutterBottom
-            variant="h5"
+            variant="h7"
           >
-            {product.title}
+            Owned by: {product.title}
           </Typography>
           <Typography
             align="center"
@@ -99,7 +72,7 @@ export const ProductCard = ({ product, ...rest }) => {
         </CardContent>
         <Box sx={{ flexGrow: 1 }} />
         <Divider />
-        <Box sx={{ p: 2 }}>
+        <Box sx={{ p: 3 }}>
           <Grid
             container
             spacing={2}
@@ -123,6 +96,17 @@ export const ProductCard = ({ product, ...rest }) => {
                 {' '}
                 Upvote
               </Typography>
+            </Grid>
+            <Grid
+              item
+              sx={{
+                alignItems: 'center',
+                display: 'flex'
+              }}
+            >
+              <Button color="success" variant="contained">
+                      Buy
+                    </Button>
             </Grid>
             <Grid
               item

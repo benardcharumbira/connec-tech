@@ -29,7 +29,7 @@ const items = [
   {
     href: '/products',
     icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'products'
+    title: 'Marketplace'
   },
   // {
   //   href: '/account',
