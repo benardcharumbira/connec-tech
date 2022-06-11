@@ -94,7 +94,12 @@ export const LatestProducts = (props) => (
           >
             <MoreVertIcon />
           </IconButton> */}
+          <Card>
           <Feed title={user.name} date={user.updatedAt} text={user.text} imageUrl={user.imageUrl} />
+
+          </Card>
+          <Divider />
+
         </ListItem>
       ))}
     </List>

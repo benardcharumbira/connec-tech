@@ -13,6 +13,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import { red } from '@material-ui/core/colors';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Box from '@mui/material/Box';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,7 +50,7 @@ export const Feed = ({ title, text, date, imageUrl }) => {
 
     return (
         // <Container maxWidth="sm">
-            <Card >
+             <Box>
                 <CardHeader
                     avatar={
                         <Avatar aria-label="recipe" className={classes.avatar}>
@@ -76,7 +78,8 @@ export const Feed = ({ title, text, date, imageUrl }) => {
                         <ShareIcon />
                     </IconButton>
                 </CardActions>
-            </Card>
+                
+            </Box>
         // </Container>
     );
 }
