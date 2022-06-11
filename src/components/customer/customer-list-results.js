@@ -48,7 +48,7 @@ export function CustomerListResults({ customers, ...rest }) {
 
 
   const { contract } = useContract(
-    "0x0655E9d6Bc020a76aC9c10115e0cB4170C2E9359"
+    ''
   );
 
   // Function to read the message from the blockchain
