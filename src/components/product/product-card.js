@@ -7,7 +7,8 @@ import { Clock as ClockIcon } from '../../icons/clock';
 import { Download as DownloadIcon } from '../../icons/download';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const style = {
   position: 'absolute',
@@ -27,8 +28,21 @@ const style = {
 
 export const ProductCard = ({ product, ...rest }) => {
 
+  const notify = () => {
+    toast.success('Processing payment...', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+  };
+
   return (
     <>
+      <ToastContainer />
       <Card
         sx={{
           display: 'flex',
@@ -104,7 +118,7 @@ export const ProductCard = ({ product, ...rest }) => {
                 display: 'flex'
               }}
             >
-              <Button color="success" variant="contained">
+              <Button color="success" variant="contained" onClick={notify}>
                       Buy
                     </Button>
             </Grid>

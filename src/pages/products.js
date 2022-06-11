@@ -9,7 +9,7 @@ const Products = () => (
   <>
     <Head>
       <title>
-        Markeplace | Material Kit
+        Markeplace
       </title>
     </Head>
     <Box
