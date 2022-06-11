@@ -6,9 +6,11 @@ import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { createEmotionCache } from '../utils/create-emotion-cache';
 import { theme } from '../theme';
+import { ThirdwebProvider, ChainId } from '@thirdweb-dev/react';
 
 const clientSideEmotionCache = createEmotionCache();
 
+const activeChianId = ChainId.Mumbai;
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
@@ -26,10 +28,12 @@ const App = (props) => {
         />
       </Head>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <ThirdwebProvider desiredChainId={activeChianId}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
+        </ThirdwebProvider>
       </LocalizationProvider>
     </CacheProvider>
   );

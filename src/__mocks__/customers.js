@@ -14,7 +14,9 @@ export const customers = [
     createdAt: 1555016400000,
     email: 'ekaterina.tankova@devias.io',
     name: 'Ekaterina Tankova',
-    phone: '304-428-3097'
+    phone: '304-428-3097',
+    hasRequested: false,
+    hasReceipeintApproved: false
   },
   {
     id: uuid(),

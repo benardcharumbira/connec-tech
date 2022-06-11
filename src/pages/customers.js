@@ -20,7 +20,7 @@ const Customers = () => (
       }}
     >
       <Container maxWidth={false}>
-        <CustomerListToolbar />
+        <span>ANBDCE</span>
         <Box sx={{ mt: 3 }}>
           <CustomerListResults customers={customers} />
         </Box>

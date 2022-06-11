@@ -2,7 +2,9 @@ import { Children } from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { createEmotionCache } from '../utils/create-emotion-cache';
+import { ThirdwebProvider, ChainId } from '@thirdweb-dev/react';
 
+const activeChainId = ChainId.Mumbai;
 class CustomDocument extends Document {
   render() {
     return (
@@ -63,13 +65,15 @@ CustomDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
-
+  
   ctx.renderPage = () => originalRenderPage({
     enhanceApp: (App) => (props) => (
+      <ThirdwebProvider desiredChainId={activeChainId}>
       <App
         emotionCache={cache}
         {...props}
       />
+      </ThirdwebProvider>
     )
   });
 
